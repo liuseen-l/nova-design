@@ -11,7 +11,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "scripts/**/*"
+    "scripts/**/*",
+    "packages/shared/**/*"
   ],
   "exclude": [
     "**/__tests__/**",

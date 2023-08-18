@@ -1,5 +1,17 @@
 {
   "extends": [
     "@antfu"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "packages/shared/**/*.ts"
+      ],
+      "rules": {
+        "no-restricted-globals": "off",
+        "unicorn/prefer-number-properties": "off",
+        "@typescript-eslint/ban-types": "off"
+      }
+    }
   ]
 }

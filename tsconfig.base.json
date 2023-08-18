@@ -8,6 +8,10 @@
     "moduleResolution": "node",
     "allowJs": false,
     "strict": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,

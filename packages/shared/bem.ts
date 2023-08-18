@@ -1,14 +1,4 @@
-function isObject(val: unknown): val is object {
-  return val !== null && typeof val === 'object'
-}
-
-function isArray(val: unknown): val is string[] {
-  return Array.isArray(val)
-}
-
-function isString(val: unknown): val is string {
-  return typeof val === 'string'
-}
+import { isArray, isObject, isString } from './general'
 
 type BEMElement = string
 type BEMModifier =
