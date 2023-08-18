@@ -1,4 +1,3 @@
-import { execSync } from 'node:child_process'
 import fg from 'fast-glob'
 
 function getPackages(packagePath) {
@@ -13,21 +12,6 @@ const scopes = [
   'other',
   'types',
 ]
-
-const gitStatus = execSync('git status --porcelain || true')
-  .toString()
-  .trim()
-  .split('\n')
-
-const scopeComplete = gitStatus
-  .find(r => ~r.indexOf('M  packages'))
-  ?.replace(/\//g, '%%')
-  ?.match(/packages%%((\w|-)*)/)?.[1]
-
-const subjectComplete = gitStatus
-  .find(r => ~r.indexOf('M  packages/components'))
-  ?.replace(/\//g, '%%')
-  ?.match(/packages%%components%%((\w|-)*)/)?.[1]
 
 export default {
   rules: {
@@ -75,26 +59,22 @@ export default {
       'always',
       [
         'build',
-        'chore',
-        'ci',
-        'docs',
+        'release',
         'feat',
         'fix',
+        'style',
         'perf',
         'refactor',
         'revert',
-        'release',
-        'style',
         'test',
-        'improvement',
+        'docs',
+        'chore',
+        'workflow',
+        'ci',
+        'types',
+        'wip',
+        'undef',
       ],
     ],
-  },
-  prompt: {
-    defaultScope: scopeComplete,
-    customScopesAlign: !scopeComplete ? 'top' : 'bottom',
-    defaultSubject: subjectComplete && `[${subjectComplete}] `,
-    allowCustomIssuePrefixs: false,
-    allowEmptyIssuePrefixs: false,
   },
 }
