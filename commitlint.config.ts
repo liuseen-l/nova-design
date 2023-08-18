@@ -9,15 +9,9 @@ const scopes = [
   ...getPackages('packages'),
   'docs',
   'play',
-  'style',
   'ci',
-  'dev',
-  'deploy',
   'other',
-  'typography',
-  'color',
-  'border',
-  'var',
+  'types',
 ]
 
 const gitStatus = execSync('git status --porcelain || true')
