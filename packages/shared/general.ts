@@ -1,8 +1,5 @@
 export function NOOP() { }
 
-/**
- * Always return false.
- */
 export const NO = () => false
 
 export const extend = Object.assign
@@ -57,7 +54,6 @@ export function toTypeString(value: unknown): string {
 }
 
 export function toRawType(value: unknown): string {
-  // extract "RawType" from strings like "[object RawType]"
   return toTypeString(value).slice(8, -1)
 }
 
@@ -72,7 +68,6 @@ export function isIntegerKey(key: unknown) {
     && `${Number.parseInt(key, 10)}` === key
 }
 
-// compare whether a value has changed, accounting for NaN.
 export function hasChanged(value: any, oldValue: any): boolean {
   return !Object.is(value, oldValue)
 }
@@ -83,24 +78,6 @@ export function def(obj: object, key: string | symbol, value: any) {
     enumerable: false,
     value,
   })
-}
-
-/**
- * "123-foo" will be parsed to 123
- * This is used for the .number modifier in v-model
- */
-export function looseToNumber(val: any): any {
-  const n = Number.parseFloat(val)
-  return isNaN(n) ? val : n
-}
-
-/**
- * Only concerns number-like strings
- * "123-foo" will be returned as-is
- */
-export function toNumber(val: any): any {
-  const n = isString(val) ? Number(val) : Number.NaN
-  return isNaN(n) ? val : n
 }
 
 let _globalThis: any
