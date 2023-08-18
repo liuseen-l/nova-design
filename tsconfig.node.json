@@ -3,7 +3,9 @@
   "compilerOptions": {
     "composite": true,
     "lib": [
-      "ESNext"
+      "ESNext",
+      "es6",
+      "dom"
     ],
     "types": [
       "node"
