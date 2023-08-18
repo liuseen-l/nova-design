@@ -12,7 +12,6 @@
       "es6",
       "dom"
     ],
-    "noUnusedLocals": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

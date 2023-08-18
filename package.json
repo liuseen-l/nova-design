@@ -8,19 +8,21 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "release": "bumpp -r",
-    "lint": "eslint ."
+    "release": "changeset add",
+    "change:version": "changeset version",
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.2",
+    "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@esbuild-kit/cjs-loader": "^2.4.2",
     "@types/node": "^20.5.0",
-    "bumpp": "^9.1.1",
     "eslint": "^8.47.0",
     "fast-glob": "^3.3.1",
     "husky": "^8.0.3",
