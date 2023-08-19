@@ -5,7 +5,8 @@
   "overrides": [
     {
       "files": [
-        "packages/shared/**/*.ts"
+        "packages/shared/**/*.ts",
+        "playground/**/*"
       ],
       "rules": {
         "no-restricted-globals": "off",

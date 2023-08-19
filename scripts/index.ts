@@ -1,2 +1,1 @@
-let a = 1
-export { }
+export * from './aliases'

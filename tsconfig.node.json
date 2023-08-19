@@ -19,7 +19,6 @@
   "exclude": [
     "**/__tests__/**",
     "**/tests/**",
-    "**/dist",
-    "playground/**/*"
+    "**/dist"
   ]
 }

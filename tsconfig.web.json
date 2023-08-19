@@ -21,7 +21,6 @@
     "**/test-helper",
     "packages/test-utils",
     "**/*.md",
-    "playground/**/*",
     "packages/shared"
   ]
 }
