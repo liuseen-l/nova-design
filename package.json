@@ -12,8 +12,8 @@
     "change:version": "changeset version",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
     "lint:fix": "pnpm run lint --fix",
-    "play:vue": "pnpm --filter @nova-design/playground dev:vue",
-    "play:react": "pnpm --filter @nova-design/playground dev:react",
+    "dev:v": "pnpm --filter @nova-design/playground dev:v",
+    "dev:r": "pnpm --filter @nova-design/playground dev:r",
     "prepare": "husky install"
   },
   "devDependencies": {
