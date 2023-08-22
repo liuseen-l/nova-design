@@ -13,6 +13,7 @@ dist
 coverage
 packages/element-plus/version.ts
 docs/server
+docs/.dumi
 
 # local env files
 *.local
