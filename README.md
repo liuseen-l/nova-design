@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/liuseen-l/nova-design/tree/main/docs/public/logo.svg" width="180" height="180"/>
+  <img src="https://github.com/liuseen-l/nova-design/blob/main/docs/public/logo.png" width="180" height="180"/>
 </p>
 <h1 align="center">
 ikun-ui
