@@ -14,6 +14,7 @@
     "lint:fix": "pnpm run lint --fix",
     "dev:v": "pnpm --filter @nova-design/playground dev:v",
     "dev:r": "pnpm --filter @nova-design/playground dev:r",
+    "docs:dev": "pnpm --filter @nova-design/docs dev",
     "prepare": "husky install"
   },
   "devDependencies": {

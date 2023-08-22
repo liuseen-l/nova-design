@@ -13,6 +13,14 @@
         "unicorn/prefer-number-properties": "off",
         "@typescript-eslint/ban-types": "off"
       }
+    },
+    {
+      "files": [
+        "docs/**/*"
+      ],
+      "rules": {
+        "antfu/no-import-node-modules-by-path": "off"
+      }
     }
   ]
 }
