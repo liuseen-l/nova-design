@@ -7,4 +7,4 @@ nova-design
 
 ## Features
 
-- 🎤 **Components Design** - Onu provides neat & beautiful crafted UI components.
+-  **Components Design** - Onu provides neat & beautiful crafted UI components.
