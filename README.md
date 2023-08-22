@@ -2,14 +2,8 @@
   <img src="https://github.com/liuseen-l/nova-design/blob/main/docs/public/logo.png" width="180" height="180"/>
 </p>
 <h1 align="center">
-ikun-ui
+nova-design
 </h1>
-<p align="center">
-  A library of web components components that allows you to make websites
-</p>
-<p align="center">
-<a href="https://ikun-ui.netlify.app" target="_blank">document</a>
-</p>
 
 ## Features
 
