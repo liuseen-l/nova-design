@@ -8,4 +8,3 @@ nova-design
 ## Features
 
 - 🎤 **Components Design** - Onu provides neat & beautiful crafted UI components.
-- 💃 **[Iconify Icons](https://icones.js.org/)** - Use any icon from the library you love.
