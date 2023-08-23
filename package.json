@@ -15,7 +15,7 @@
     "dev:v": "pnpm --filter @nova-design/playground dev:v",
     "dev:r": "pnpm --filter @nova-design/playground dev:r",
     "docs:dev": "pnpm --filter @nova-design/docs dev",
-    "test:unit":"vitest",
+    "test:unit": "vitest",
     "prepare": "husky install"
   },
   "devDependencies": {

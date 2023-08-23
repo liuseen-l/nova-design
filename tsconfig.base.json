@@ -12,6 +12,7 @@
       "es6",
       "dom"
     ],
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

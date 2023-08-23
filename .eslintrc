@@ -9,6 +9,7 @@
         "playground/**/*"
       ],
       "rules": {
+        "vue/component-name-in-template-casing": "off",
         "no-restricted-globals": "off",
         "unicorn/prefer-number-properties": "off",
         "@typescript-eslint/ban-types": "off"

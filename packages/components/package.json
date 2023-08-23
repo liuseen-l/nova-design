@@ -1,11 +1,25 @@
 {
   "name": "@nova-design/components",
-  "description": "",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.6.12",
   "author": "liuseen-l",
   "license": "ISC",
-  "keywords": [],
-  "main": "index.js",
-  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuseen-l/nova-design/tree/main/packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/liuseen-l/nova-design/issues"
+  },
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=v14.21.3"
+  },
   "devDependencies": {
     "lit": "^2.8.0"
   }
