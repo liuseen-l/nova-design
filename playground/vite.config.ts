@@ -14,5 +14,10 @@ const modeResolver: Record<string, Function> = {
 }
 
 export default defineConfig(({ mode }) => {
-  return modeResolver[mode]()
+  const modeConfig = modeResolver[mode]()
+  return {
+    ...modeConfig,
+    resolve: {
+    },
+  }
 })

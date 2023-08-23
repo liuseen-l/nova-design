@@ -94,9 +94,3 @@ export class NovaButton extends LitElement {
     }
   `
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'nova-button': NovaButton
-  }
-}
