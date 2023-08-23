@@ -15,6 +15,7 @@
     "dev:v": "pnpm --filter @nova-design/playground dev:v",
     "dev:r": "pnpm --filter @nova-design/playground dev:r",
     "docs:dev": "pnpm --filter @nova-design/docs dev",
+    "test:unit":"vitest",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -30,7 +31,8 @@
     "lint-staged": "^14.0.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vitest": "^0.34.2"
   },
   "pnpm": {
     "peerDependencyRules": {
