@@ -4,7 +4,9 @@
   "author": "liuseen-l",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.ts",
   "scripts": {
   }
 }
