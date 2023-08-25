@@ -1,5 +1,5 @@
 {
-  "name": "@nova-design/shared",
+  "name": "@nova-desigin/shared",
   "description": "",
   "author": "liuseen-l",
   "license": "ISC",
@@ -7,6 +7,5 @@
   "main": "index.ts",
   "module": "index.ts",
   "types": "index.ts",
-  "scripts": {
-  }
+  "scripts": {}
 }

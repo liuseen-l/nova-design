@@ -4,6 +4,7 @@
 # Package Manager
 node_modules
 .pnpm-debug.log*
+lib
 
 # System
 .DS_Store

@@ -23,5 +23,5 @@
         "antfu/no-import-node-modules-by-path": "off"
       }
     }
-  ]
+  ],
 }

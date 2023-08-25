@@ -17,7 +17,6 @@ export default defineConfig(({ mode }) => {
   const modeConfig = modeResolver[mode]()
   return {
     ...modeConfig,
-    resolve: {
-    },
+
   }
 })

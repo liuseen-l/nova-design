@@ -1,5 +1,5 @@
 {
-  "name": "@nova-design/components",
+  "name": "@nova-design/core",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@8.6.12",
@@ -12,7 +12,14 @@
   "bugs": {
     "url": "https://github.com/liuseen-l/nova-design/issues"
   },
-  "main": "index.ts",
+  "exports": {
+    "./*": "./*",
+    "./lib/*": {
+      "import": "./lib/*/index.es.js"
+    }
+  },
+  "main": "./lib/button/index.es.js",
+  "module": "./lib/button/index.es.js",
   "files": [
     "dist"
   ],
