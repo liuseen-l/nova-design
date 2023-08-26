@@ -4,9 +4,7 @@ import type { resolveOption } from "..";
 import type { InlineConfig, } from "vite";
 
 function resolveEsConfig(option: resolveOption) {
-  const { rootDir, packageName, isWatchMode: watch } = option
-  let libName = option.libName ? option.libName : 'index'
-
+  const { rootDir, packageName, isWatchMode: watch, libName } = option
 
   return {
     build: {
@@ -24,9 +22,10 @@ function resolveEsConfig(option: resolveOption) {
         external: ['lit', '@nova-design/shared'],
       },
       emptyOutDir: false,
+      watch,
     },
     plugins: [resolveDts(packageName, `packages/${packageName}/lib`)]
-  } as InlineConfig
+  } as unknown as InlineConfig
 }
 
 export function resolveComponentsConfig(option: resolveOption) {

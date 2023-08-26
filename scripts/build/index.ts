@@ -36,7 +36,6 @@ async function helperMakeDist(packageName: string) {
   const fileContent = await fps.readFile(resolve(rootDir, `packages/${packageName}/index.ts`), 'utf-8')
   const entries = fileContent.split('\n').filter(Boolean).map(c => {
     const toAry = c.split("")
-    console.log(toAry);
     toAry.splice(toAry.length - 1, 0, '/index.mjs')
     return toAry.join("")
   })
@@ -46,7 +45,6 @@ async function helperMakeDist(packageName: string) {
 
 function resolveConfig() {
   const libConfig: InlineConfig[] = []
-  console.log(packages);
 
   for (const packageName of packages) {
     if (packageName === 'components') {

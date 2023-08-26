@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 import { resolveDts } from "../../utils";
 import type { resolveOption } from "..";
-import type { InlineConfig } from "vite";
+import type { InlineConfig, } from "vite";
 
 export function resolveSharedConfig(option: resolveOption) {
   const { rootDir, packageName, isWatchMode: watch } = option
@@ -22,7 +22,8 @@ export function resolveSharedConfig(option: resolveOption) {
         },
       },
       emptyOutDir: false,
+      watch,
     },
     plugins: [resolveDts(packageName, `packages/${packageName}/dist`)]
-  } as InlineConfig
+  } as unknown as InlineConfig
 }

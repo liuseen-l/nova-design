@@ -40,7 +40,7 @@ function createModifier(prefixClass: string, modifierObject?: BEMModifier) {
  * bem('main',[type, status, shape, size], {loading: loading,long: long,disabled: disabled}),
  */
 
-export function createCssScope(prefix: string, identity = 'yk') {
+export function createCssScope(prefix: string, identity = 'nova') {
   const prefixClass = `${identity}-${prefix.replace(identity, '')}`
 
   return (
