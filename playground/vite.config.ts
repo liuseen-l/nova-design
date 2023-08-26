@@ -1,15 +1,15 @@
 import React from '@vitejs/plugin-react'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
+import litCss from 'vite-plugin-lit-css'
 
 const modeResolver: Record<string, Function> = {
   vue: () => ({
-    plugins: [Vue()],
+    plugins: [Vue(), litCss()],
 
   }),
   react: () => ({
-    plugins: [React()],
-
+    plugins: [React(), litCss()],
   }),
 }
 

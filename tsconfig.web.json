@@ -11,8 +11,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "packages/**/*"
-  ],
+    "packages/**/*",
+    "tsconfig.build.json"],
   "exclude": [
     "node_modules",
     "**/dist",

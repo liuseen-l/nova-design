@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Demo from '@nova-design/components/button/demo/vue/index.vue'
+import '@nova-design/core/lib/button'
 </script>
 
 <template>
+  <nova-button />
   <Demo />
 </template>
 

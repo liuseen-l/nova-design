@@ -3,7 +3,8 @@ import { fileURLToPath } from 'url'
 import { build } from 'vite'
 import fg from 'fast-glob'
 import type { InlineConfig } from 'vite'
-import dts from 'rollup-plugin-dts'
+import dts from 'vite-plugin-dts'
+import { execa } from 'execa'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const rootDir = resolve(__dirname, '..')
@@ -19,10 +20,6 @@ packages.push(
     })
 )
 
-const pluginDts = dts({
-  tsconfig: resolve(rootDir, 'tsconfig.build.json'),
-})
-
 function resolveConfig() {
   const libConfig: InlineConfig[] = []
   for (const packageName of packages) {
@@ -34,41 +31,27 @@ function resolveConfig() {
 
       for (const libName of libs) {
         libConfig.push({
-          // 项目根目录，决定了打包后产物的存放为位置,也可以通过outDir确定
-          // root: resolve(__dirname, '../packages/components'),
           build: {
-            cssCodeSplit: true,
             outDir: resolve(rootDir, `packages/nova-design/lib`),
             lib: {
               entry: resolve(rootDir, `packages/${packageName}/${libName}/index.ts`),
               formats: ['es'],
-              fileName: (format) => `${libName}/index.${format}.js`,
+              fileName: `${libName}/index`,
             },
             rollupOptions: {
+              treeshake: true,
               output: {
                 exports: 'named',
               },
-              external: ['lit']
+              external: ['lit'],
             },
             emptyOutDir: false,
           },
+          plugins: [dts({
+            tsconfigPath: resolve(rootDir, 'tsconfig.build.json'),
+            outDir: resolve(rootDir, `packages/nova-design/lib`),
+          })],
         })
-        // libConfig.push({
-        //   // 项目根目录，决定了打包后产物的存放为位置,也可以通过outDir确定
-        //   // root: resolve(__dirname, '../packages/components'),
-        //   build: {
-        //     outDir: resolve(rootDir, `packages/${packageName}/lib`),
-        //     lib: {
-        //       entry: resolve(rootDir, `packages/components/${libName}/index.ts`),
-        //       formats: ['es'],
-        //       fileName: `${libName}/index.d.ts`,
-        //     },
-        //     rollupOptions: {
-        //       external: ['lit']
-        //     }
-        //   },
-        //   plugins: [pluginDts]
-        // })
       }
     }
   }
@@ -78,9 +61,10 @@ function resolveConfig() {
 
 
 async function buildEntry() {
+  await execa('pnpm run clean:dist', { stdio: 'inherit' })
+
   const configList = resolveConfig()
   await Promise.all(configList.map(viteConfig => build(viteConfig).catch(e => {
-    console.error(e, '报错了', JSON.stringify(viteConfig));
     throw new Error('构建失败');
   })));
 

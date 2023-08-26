@@ -13,6 +13,7 @@
     "url": "https://github.com/liuseen-l/nova-design/issues"
   },
   "main": "index.ts",
+  "types": "index.d.ts",
   "files": [
     "dist"
   ],

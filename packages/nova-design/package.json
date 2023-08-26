@@ -15,19 +15,16 @@
   "exports": {
     "./*": "./*",
     "./lib/*": {
-      "import": "./lib/*/index.es.js"
+      "types": "./lib/*/index.d.ts",
+      "import": "./lib/*/index.mjs"
     }
   },
-  "main": "./lib/button/index.es.js",
-  "module": "./lib/button/index.es.js",
+  "main": "./lib/button/index.mjs",
+  "module": "./lib/button/index.mjs",
   "files": [
     "dist"
   ],
   "engines": {
     "node": ">=v14.21.3"
-  },
-  "devDependencies": {
-    "@nova-design/shared": "workspace:^",
-    "lit": "^2.8.0"
   }
 }
