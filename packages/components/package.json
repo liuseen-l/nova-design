@@ -1,5 +1,5 @@
 {
-  "name": "@nova-design/components",
+  "name": "@nova-design/core",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@8.6.12",
@@ -12,10 +12,22 @@
   "bugs": {
     "url": "https://github.com/liuseen-l/nova-design/issues"
   },
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.mjs"
+    },
+    "./*": "./*",
+    "./lib/*": {
+      "types": "./lib/*/index.d.ts",
+      "import": "./lib/*/index.mjs"
+    }
+  },
+  "main": "./lib/index.mjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
   "files": [
-    "dist"
+    "lib"
   ],
   "engines": {
     "node": ">=v14.21.3"

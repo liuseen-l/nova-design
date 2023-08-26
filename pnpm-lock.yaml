@@ -40,6 +40,9 @@ importers:
       lint-staged:
         specifier: ^14.0.0
         version: 14.0.0
+      minimist:
+        specifier: ^1.2.8
+        version: 1.2.8
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -104,9 +107,6 @@ importers:
 
   playground:
     dependencies:
-      '@nova-design/core':
-        specifier: workspace:^
-        version: link:../packages/nova-design
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -114,7 +114,7 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@nova-design/components':
+      '@nova-design/core':
         specifier: workspace:^
         version: link:../packages/components
       '@types/react':
