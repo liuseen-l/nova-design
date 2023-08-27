@@ -13,7 +13,6 @@ const args = minimist(process.argv.slice(2))
 const isWatchMode = args.watch || false
 
 const packages: string[] = []
-console.log(rootDir);
 
 packages.push(
   ...fg
@@ -31,7 +30,6 @@ export interface resolveOption {
   libName?: string,
 }
 
-
 async function helperMakeDist(packageName: string) {
   const fileContent = await fps.readFile(resolve(rootDir, `packages/${packageName}/index.ts`), 'utf-8')
   const entries = fileContent.split('\n').filter(Boolean).map(c => {
@@ -40,7 +38,6 @@ async function helperMakeDist(packageName: string) {
     return toAry.join("")
   })
   await fps.writeFile(resolve(rootDir, `packages/${packageName}/lib/index.mjs`), entries.join('\n'))
-
 }
 
 function resolveConfig() {
@@ -81,6 +78,7 @@ async function buildEntry() {
   await execa('pnpm run clean:dist', { stdio: 'inherit' })
 
   const configList = resolveConfig()
+
   await Promise.all(configList.map(viteConfig => build(viteConfig).catch(e => {
     throw new Error('构建失败');
   })));

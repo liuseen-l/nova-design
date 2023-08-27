@@ -12,7 +12,7 @@
   },
   "include": [
     "packages/**/*",
-    "tsconfig.build.json"],
+    "tsconfig.build.json", "global.d.ts"],
   "exclude": [
     "node_modules",
     "**/dist",

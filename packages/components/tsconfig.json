@@ -1,13 +1,13 @@
 {
-  "extends": "../../tsconfig.base.json",
+  // "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "lib": [
       "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
-    "rootDir": "."
-    // "experimentalDecorators": true
+    "rootDir": ".",
+    "experimentalDecorators": true
   },
   "exclude": [
     "**/demo/**",
