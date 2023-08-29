@@ -4,6 +4,7 @@ import '@nova-design/core'
 
 <template>
   <nova-button />
+  <nova-input />
   <Demo />
 </template>
 
