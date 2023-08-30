@@ -18,8 +18,8 @@
     "build:docs": "",
     "build": "esno ./scripts/build/index.ts",
     "prepare": "husky install",
-    "clean:module": "rimraf node_modules",
-    "clean:dist": "rimraf lib"
+    "clean:module": "rimraf **/node_modules",
+    "clean": "rimraf packages/**/lib"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.2",

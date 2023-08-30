@@ -1,5 +1,4 @@
 import { resolve } from "node:path";
-import { resolveDts } from "../../utils";
 import type { resolveOption } from "..";
 import type { InlineConfig, } from "vite";
 
@@ -14,7 +13,7 @@ export function resolveSharedConfig(option: resolveOption) {
       rollupOptions: {
         treeshake: true,
         output: {
-          dir: resolve(rootDir, `packages/${packageName}/dist`),
+          dir: resolve(rootDir, `packages/${packageName}/lib`),
           entryFileNames: '[name].mjs',
           exports: 'named',
           preserveModules: true,
@@ -24,6 +23,5 @@ export function resolveSharedConfig(option: resolveOption) {
       emptyOutDir: false,
       watch,
     },
-    plugins: [resolveDts(packageName, `packages/${packageName}/dist`)]
   } as unknown as InlineConfig
 }
