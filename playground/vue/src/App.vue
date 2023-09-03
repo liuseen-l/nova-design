@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import '@nova-design/core'
+import '@nova-desigin/core/es/components/button'
 </script>
 
 <template>
   <nova-button />
-  <nova-input />
-  <Demo />
 </template>
 
 <style scoped>
