@@ -7,16 +7,21 @@
       "es6",
       "dom"
     ],
-    "skipLibCheck": true,
-    "rootDir": "."
+    "types": [
+      "node"
+    ],
+    "rootDir": "./packages",
+    "skipLibCheck": true
   },
   "include": [
-    "scripts/**/*",
-    "packages/**/*"
+    "packages/components",
+    "packages/shared"
   ],
   "exclude": [
     "**/__tests__/**",
     "**/tests/**",
-    "**/dist"
+    "**/dist",
+    "**/node_modules/**",
+    "**/demo/**"
   ]
 }

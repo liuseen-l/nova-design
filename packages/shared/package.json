@@ -1,26 +1,13 @@
 {
-  "name": "@nova-design/shared",
-  "version": "0.0.1",
+  "name": "@nova-desigin/shared",
+  "version": "1.0.0",
   "description": "",
-  "author": "liuseen-l",
+  "author": "",
   "license": "ISC",
   "keywords": [],
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "import": "./lib/index.mjs"
-    },
-    "./*": "./*",
-    "./lib/*": {
-      "types": "./lib/*.d.ts",
-      "import": "./lib/*.mjs"
-    }
-  },
-  "main": "./lib/index.mjs",
-  "module": "./lib/index.mjs",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
-  "scripts": {}
+  "main": "index.ts",
+  "module": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

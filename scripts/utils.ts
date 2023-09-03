@@ -2,7 +2,8 @@ import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { defineConfig } from "vite"
 import dts from 'vite-plugin-dts'
-import { resolveOption } from "./build"
+import { resolveOption } from "./build/index2"
+import type { OutputOptions, RollupBuild } from 'rollup'
 
 export function resolveDts(packageName: string, outDir: string) {
   const tsconfigPath = resolve(rootDir, `packages/${packageName}/tsconfig.json`)
@@ -42,3 +43,15 @@ export function resolveDtsConfig(option: resolveOption) {
     plugins: [resolveDts(packageName, `packages/${packageName}/lib`)]
   })
 }
+export function formatBundleFilename(
+  name: string,
+  minify: boolean,
+  ext: string
+) {
+  return `${name}${minify ? '.min' : ''}.${ext}`
+}
+
+export function writeBundles(bundle: RollupBuild, options: OutputOptions[]) {
+  return Promise.all(options.map((option) => bundle.write(option)))
+}
+export const target = 'es2018'

@@ -10,6 +10,7 @@ const scopes = [
   'play',
   'ci',
   'other',
+  'build',
   'types',
 ]
 

@@ -1,39 +1,11 @@
 {
-  "name": "@nova-design/core",
-  "type": "module",
+  "name": "@nova-desigin/components",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.6.12",
-  "author": "liuseen-l",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/liuseen-l/nova-design/tree/main/packages/components"
-  },
-  "bugs": {
-    "url": "https://github.com/liuseen-l/nova-design/issues"
-  },
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "import": "./lib/index.mjs"
-    },
-    "./*": "./*",
-    "./lib/*": {
-      "types": "./lib/*/index.d.ts",
-      "import": "./lib/*/index.mjs"
-    }
-  },
-  "main": "./lib/index.mjs",
-  "module": "./lib/index.mjs",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
-  "engines": {
-    "node": ">=v14.21.3"
-  },
-  "devDependencies": {
-    "@nova-design/shared": "workspace:^",
+  "description": "all components are settled here",
+  "main": "index.ts",
+  "module": "index.ts",
+  "dependencies": {
+    "@nova-desigin/shared": "workspace:^",
     "lit": "^2.8.0"
   }
 }
