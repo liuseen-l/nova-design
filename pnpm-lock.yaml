@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -22,6 +26,12 @@ importers:
       '@types/node':
         specifier: ^20.5.0
         version: 20.5.1
+      chalk:
+        specifier: ^5.3.0
+        version: 5.3.0
+      dayjs:
+        specifier: ^1.11.9
+        version: 1.11.9
       eslint:
         specifier: ^8.47.0
         version: 8.47.0
@@ -34,6 +44,9 @@ importers:
       fast-glob:
         specifier: ^3.3.1
         version: 3.3.1
+      fs-extra:
+        specifier: ^11.1.1
+        version: 11.1.1
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -117,9 +130,6 @@ importers:
 
   playground:
     dependencies:
-      '@nova-desigin/core':
-        specifier: workspace:0.0.0-dev.1
-        version: link:../dist/nova-design
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -12928,6 +12938,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
     dev: true
     optional: true
 
