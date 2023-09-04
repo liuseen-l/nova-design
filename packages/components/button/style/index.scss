@@ -1,11 +1,24 @@
+$bg-color: #ed795a;
+$browser-context: 16;
+
+@mixin ellipsisBasic($clamp:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+}
+
 :host {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+
 button {
   border-radius: 8px;
+  width: 100px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -14,10 +27,13 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  @include ellipsisBasic(3);//使用此混合样式，默认显示3行
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: $bg-color;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -27,6 +43,7 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

@@ -14,8 +14,10 @@ export class NovaButton extends LitElement {
   render() {
     return html`
         <button @click=${this._onClick} part="button">
-          count is ${this.count}
+          count is ${this.count}12312312
         </button>
+        <span>123123123121</span>
+        <div>11231223</div>
     `
   }
 

@@ -1,11 +1,11 @@
 {
-  "name": "@nova-desigin/components",
+  "name": "@nova-design/components",
   "version": "0.0.1",
   "description": "all components are settled here",
   "main": "index.ts",
   "module": "index.ts",
   "dependencies": {
-    "@nova-desigin/shared": "workspace:^",
+    "@nova-design/shared": "workspace:^",
     "lit": "^2.8.0"
   }
 }

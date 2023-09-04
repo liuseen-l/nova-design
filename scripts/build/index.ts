@@ -2,7 +2,7 @@ import { resolve } from 'node:path'
 import { build, defineConfig } from 'vite'
 import fg from 'fast-glob'
 import { execa } from 'execa'
-import { rootDir } from '../consts'
+import { esDir, rootDir } from '../consts'
 import minimist from 'minimist'
 import dts from 'vite-plugin-dts'
 import fs from 'fs-extra'
@@ -23,29 +23,26 @@ packages.push(
     })
 )
 
-export interface resolveOption {
-  packageName: string,
-  rootDir: string
-  isWatchMode: boolean
-  libName?: string,
-}
-
-// TODO: auto scan the target dependent
-const external = ['lit', 'lit/decorators.js']
-
 function resolveConfig() {
   const entries = []
+
+  // TODO: auto scan the target dependent
+  const external = ['lit', 'lit/decorators.js']
 
   for (const packageName of packages) {
     entries.push(resolve(rootDir, `packages/${packageName}/index.ts`))
   }
 
-  // TODO: umd cjs
+  /**
+   * TODO: 
+   *  1. umd cjs
+   *  2. lose entry bundle 
+   */
   return defineConfig({
     plugins: [
       dts({
         tsconfigPath: resolve(rootDir, './tsconfig.build.json'),
-        outDir: [resolve(rootDir, `dist/nova-design/es`)],
+        outDir: [esDir],
       }),
     ],
     build: {
@@ -61,17 +58,16 @@ function resolveConfig() {
         output: [
           {
             format: 'esm',
-            dir: resolve(rootDir, `dist/nova-design/es`),
+            dir: esDir,
             exports: undefined,
             preserveModules: true,
-            preserveModulesRoot: resolve(rootDir, `dist/nova-design/es/packages`),
+            preserveModulesRoot: resolve(esDir, `packages`),
             entryFileNames: `[name].mjs`,
           },
         ],
       },
     },
   })
-
 }
 
 function resolvePackageJson(source: string, dest: string) {
@@ -83,7 +79,7 @@ function resolvePackageJson(source: string, dest: string) {
   })
 }
 
-function genPackageJson(){
+function genPackageJson() {
   const sourcePkgPath = resolve(rootDir, 'packages/nova-design/package.json')
   const destPkgPath = resolve(rootDir, 'dist/nova-design/package.json')
   if (!isWatchMode) {
