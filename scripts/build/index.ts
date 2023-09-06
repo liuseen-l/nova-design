@@ -32,7 +32,6 @@ function resolveConfig() {
   for (const packageName of packages) {
     entries.push(resolve(rootDir, `packages/${packageName}/index.ts`))
   }
-
   /**
    * TODO: 
    *  1. umd cjs
