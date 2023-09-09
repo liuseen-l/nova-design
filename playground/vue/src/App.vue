@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import '@nova-design/core/es/components/button'
+// import '@nova-design/core/es/components/button'；
 </script>
 
 <template>
